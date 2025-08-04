@@ -1,0 +1,463 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial Black', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0a0a2e 0%, #16213e 50%, #1a1a3a 100%);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 140, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(65, 105, 225, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ki Energy Effects */
+.ki-energy-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ki-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+    animation: kiFloat 4s linear infinite;
+}
+
+@keyframes kiFloat {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Dragon Balls */
+.dragon-balls-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.dragon-ball {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #FFA500, #FF8C00, #FF6B00);
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: all;
+    animation: dragonBallFloat 6s ease-in-out infinite;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 
+        0 0 20px rgba(255, 165, 0, 0.6),
+        inset -10px -10px 20px rgba(0, 0, 0, 0.3),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.dragon-ball:hover {
+    transform: scale(1.2);
+    box-shadow: 
+        0 0 30px rgba(255, 215, 0, 0.8),
+        inset -10px -10px 20px rgba(0, 0, 0, 0.3),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+.dragon-ball.collected {
+    background: radial-gradient(circle at 30% 30%, #FFD700, #FFC107, #FFB300);
+    box-shadow: 
+        0 0 40px rgba(255, 215, 0, 1),
+        inset -10px -10px 20px rgba(0, 0, 0, 0.2),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.4);
+    animation: dragonBallGlow 1s ease-in-out infinite alternate;
+}
+
+.dragon-ball .star {
+    color: #8B0000;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    margin: 1px;
+}
+
+.ball-1 { top: 15%; left: 10%; animation-delay: 0s; }
+.ball-2 { top: 25%; right: 15%; animation-delay: 1s; }
+.ball-3 { top: 35%; left: 20%; animation-delay: 2s; }
+.ball-4 { top: 45%; right: 25%; animation-delay: 3s; }
+.ball-5 { top: 55%; left: 15%; animation-delay: 4s; }
+.ball-6 { top: 65%; right: 20%; animation-delay: 5s; }
+.ball-7 { top: 75%; left: 50%; animation-delay: 6s; }
+
+@keyframes dragonBallFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(90deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
+    75% { transform: translateY(-30px) rotate(270deg); }
+}
+
+@keyframes dragonBallGlow {
+    0% { box-shadow: 0 0 40px rgba(255, 215, 0, 1); }
+    100% { box-shadow: 0 0 60px rgba(255, 215, 0, 1), 0 0 80px rgba(255, 165, 0, 0.8); }
+}
+
+/* Main Title */
+.main-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 2rem 0;
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.8),
+        0 0 20px rgba(255, 165, 0, 0.6),
+        0 0 30px rgba(255, 140, 0, 0.4),
+        2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 3;
+    position: relative;
+}
+
+.typing-text {
+    color: #FFA500;
+    animation: typing 3s steps(13) 1s both, textGlow 2s ease-in-out infinite alternate;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #FFD700;
+}
+
+.name-highlight {
+    color: #4169E1;
+    display: block;
+    margin-top: 10px;
+    animation: powerUp 2s ease-in-out 4s both;
+}
+
+.power-level {
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin-top: 1rem;
+    animation: powerLevelFlicker 1s ease-in-out infinite alternate;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes textGlow {
+    0% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.8); }
+    100% { text-shadow: 0 0 20px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 165, 0, 0.8); }
+}
+
+@keyframes powerUp {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes powerLevelFlicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Shenron */
+.shenron-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.shenron {
+    width: 300px;
+    height: auto;
+    opacity: 0.8;
+    animation: shenronAppear 3s ease-in-out;
+}
+
+.shenron-text {
+    color: #FFD700;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    animation: shenronText 2s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes shenronAppear {
+    0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+    50% { transform: scale(1.2) rotate(0deg); opacity: 0.9; }
+    100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+}
+
+@keyframes shenronText {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Features Section */
+.features {
+    margin-top: 4rem;
+    text-align: center;
+    z-index: 3;
+    position: relative;
+}
+
+.wish-container {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(65, 105, 225, 0.1));
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 215, 0, 0.2);
+    animation: slideInUp 1s ease-out;
+}
+
+.wish-container h2 {
+    color: #FFD700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.wish-display {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 1.5rem 0;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.wish-btn, .kamehameha-btn, .ki-blast-btn {
+    background: linear-gradient(45deg, #FF8C00, #4169E1, #FFD700);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 215, 0, 0.3);
+    margin: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.wish-btn:hover, .kamehameha-btn:hover, .ki-blast-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 215, 0, 0.6);
+    animation: buttonGlow 0.5s ease-in-out;
+}
+
+@keyframes buttonGlow {
+    0%, 100% { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.6); }
+    50% { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.8); }
+}
+
+.power-actions {
+    margin: 2rem 0;
+}
+
+.dragon-ball-status {
+    background: linear-gradient(135deg, rgba(65, 105, 225, 0.1), rgba(255, 165, 0, 0.1));
+    border: 2px solid rgba(65, 105, 225, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dragon-ball-status h3 {
+    color: #4169E1;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.collection-status {
+    font-size: 1.3rem;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+}
+
+.collection-hint {
+    color: #FFA500;
+    font-style: italic;
+}
+
+.birthday-message {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.birthday-message h3 {
+    color: #FFD700;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.message-text {
+    font-size: 1.1rem;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Kamehameha Effect */
+.kamehameha-wave {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(65, 105, 225, 0.8) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1000;
+    animation: kamehamehaBlast 2s ease-out forwards;
+}
+
+@keyframes kamehamehaBlast {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(3); }
+}
+
+/* Ki Blast Effect */
+.ki-blast {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+    animation: kiBlastMove 1s linear forwards;
+}
+
+@keyframes kiBlastMove {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3) translateY(-200px);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .dragon-ball {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .dragon-ball .star {
+        font-size: 10px;
+    }
+    
+    .shenron {
+        width: 200px;
+    }
+    
+    .wish-container, .dragon-ball-status, .birthday-message {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .wish-btn, .kamehameha-btn, .ki-blast-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
+

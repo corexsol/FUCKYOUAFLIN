@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐉 Happy Birthday Aflin! Dragon Ball Style 🐉</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="ki-energy-container" id="kiEnergy"></div>
+            
+            <div class="dragon-balls-container">
+                <div class="dragon-ball ball-1" data-stars="1" onclick="collectDragonBall(this)">
+                    <div class="star">★</div>
+                </div>
+                <div class="dragon-ball ball-2" data-stars="2" onclick="collectDragonBall(this)">
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                </div>
+                <div class="dragon-ball ball-3" data-stars="3" onclick="collectDragonBall(this)">
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                </div>
+                <div class="dragon-ball ball-4" data-stars="4" onclick="collectDragonBall(this)">
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                </div>
+                <div class="dragon-ball ball-5" data-stars="5" onclick="collectDragonBall(this)">
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                </div>
+                <div class="dragon-ball ball-6" data-stars="6" onclick="collectDragonBall(this)">
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                </div>
+                <div class="dragon-ball ball-7" data-stars="7" onclick="collectDragonBall(this)">
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                    <div class="star">★</div>
+                </div>
+            </div>
+            
+            <h1 class="main-title">
+                <span class="typing-text">Happy Birthday</span>
+                <span class="name-highlight">Aflin!</span>
+                <div class="power-level">Power Level: <span id="powerLevel">9001</span></div>
+            </h1>
+            
+            <div class="shenron-container" id="shenronContainer">
+                <img src="assets/images/shenron.jpg" alt="Shenron" class="shenron hidden">
+                <div class="shenron-text hidden">Your wish has been granted!</div>
+            </div>
+        </section>
+
+        <!-- Interactive Features Section -->
+        <section class="features">
+            <div class="wish-container">
+                <h2>🐉 Sarcastic Birthday Wishes 🐉</h2>
+                <div class="wish-display" id="wishDisplay">
+                    Click the button below to receive a "special" birthday wish!
+                </div>
+                <button class="wish-btn" onclick="generateSarcasticWish()">Generate Sarcastic Wish 😏</button>
+            </div>
+            
+            <div class="power-actions">
+                <button class="kamehameha-btn" onclick="triggerKamehameha()">🌊 KAMEHAMEHA! 🌊</button>
+                <button class="ki-blast-btn" onclick="triggerKiBlast()">⚡ Ki Blast! ⚡</button>
+            </div>
+            
+            <div class="dragon-ball-status">
+                <h3>Dragon Ball Collection</h3>
+                <div class="collection-status" id="collectionStatus">
+                    Collected: <span id="collectedCount">0</span>/7 Dragon Balls
+                </div>
+                <div class="collection-hint">Collect all 7 Dragon Balls to summon Shenron!</div>
+            </div>
+            
+            <div class="birthday-message">
+                <h3>🎂 Special Dragon Ball Birthday Message 🎂</h3>
+                <p class="message-text">
+                    May your birthday be as epic as a Saiyan transformation... 
+                    but let's be honest, you're more like Yamcha! 😂🎈
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

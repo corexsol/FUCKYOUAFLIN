@@ -1,20 +1,16 @@
 // Sarcastic birthday wishes with Uncle Ali references
 const sarcasticWishes = [
-    "🎮 I wish I become as good as my uncle Ali on Hearthstone... oh wait, that's impossible! 😏",
-    "🎯 I wish I become like my uncle Ali... but let's be realistic here! 🤣",
-    "😎 I wish I become as cool as my uncle Ali... in my dreams maybe! 😂",
-    "💥 May your power level be over 9000... unlike your cooking skills! 🍳",
-    "🐉 Hope you collect all 7 Dragon Balls... you'll need them to fix your life! 😈",
-    "⚡ May you go Super Saiyan... because normal you needs an upgrade! 💪",
-    "🍜 Wishing you Goku's appetite... oh wait, you already have that! 🐷",
-    "👑 May you be as strong as Vegeta's ego... that's pretty strong! 💪",
-    "🎮 Hope your birthday is better than your last gaming session! 🎯",
-    "🥊 May you finally learn to dodge... in real life, not just anime! 🤺",
-    "🎂 Another year older, another year closer to being as wise as Master Roshi... good luck! 👴",
-    "🌟 May your birthday wishes come true... unlike your New Year's resolutions! 📅",
-    "🎈 Hope you age like fine wine... not like milk left in the sun! 🧀",
-    "🎊 May you have the determination of Goku... to finish your chores! 🧹",
-    "✨ Wishing you the wisdom of Piccolo... to finally understand basic instructions! 📖"
+    " I wish I become as good as my uncle Ali on Hearthstone... oh wait, that's impossible!",
+    " I wish I become like my uncle Ali... but let's be realistic here! ",
+    " I wish I become as cool as my uncle Ali... in my dreams maybe! ",
+    " May your power level be over 9000... ",
+    " Hope you collect all 7 Dragon Balls... you'll need them to fix your life! ",
+    " May you go Super Saiyan... because normal you needs an upgrade! ",
+    " May you be as strong as Vegeta's ego... that's pretty strong! ",
+    " Hope your birthday is better than your last gaming session! ",
+    " Another year older, another year closer to being as wise as Master Roshi... good luck! ",
+    " May you have the determination of Vegeta... to beat me on hearthstone",
+    " Wishing you the wisdom of Piccolo... to finally understand basic instructions! "
 ];
 
 // Dragon Ball collection tracking
